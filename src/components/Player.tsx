@@ -6,7 +6,6 @@ import { AudioPlayer } from './audio/AudioPlayer';
 import { AudioControls } from './audio/AudioControls';
 import { getMediaUrl } from '../utils/cloudinary';
 import { useAudioNavigation } from '../hooks/useAudioNavigation';
-import { AuthHeader } from './auth/AuthHeader';
 import { MeditationHeader } from './meditation/MeditationHeader';
 import { CompleteButton } from './meditation/CompleteButton';
 
@@ -21,7 +20,6 @@ export function Player() {
   const chapter = chapters.find((c) => c.id === meditation?.chapter);
 
   const { isPlaying, currentTime, duration, togglePlay } = usePlayerStore();
-
   const { markMeditationComplete } = useProgressStore();
   const { hasPrevious, hasNext, previousMeditation, nextMeditation } =
     useAudioNavigation(id || '');
@@ -47,26 +45,40 @@ export function Player() {
 
   const handleComplete = () => {
     markMeditationComplete(meditation.id);
-    navigate('/');
+    navigate(`/chapter/${chapter.id}`);
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <AuthHeader />
+      {/* Back Button */}
+      <MeditationHeader />
 
-      <MeditationHeader chapter={chapter} meditationTitle={meditation.title} />
+      {/* Image Section */}
+      <div className="w-full">
+        <img
+          src={imageUrl}
+          alt=""
+          className="w-full h-64 object-cover"
+          onError={(e) => {
+            console.error('Image failed to load:', imageUrl);
+            e.currentTarget.style.display = 'none';
+          }}
+        />
+      </div>
 
-      <img
-        src={imageUrl}
-        alt=""
-        className="w-full aspect-square object-cover"
-        onError={(e) => {
-          console.error('Image failed to load:', imageUrl);
-          e.currentTarget.style.display = 'none';
-        }}
-      />
+      {/* Chapter Name and Meditation Title */}
+      <div className="p-6 max-w-2xl mx-auto w-full">
+        <p className="text-sm text-gray-600 font-medium uppercase tracking-wide">
+          {chapter.title}
+        </p>
+        <h1 className="text-4xl font-serif text-primary mt-1">
+          {meditation.title}
+        </h1>
+      </div>
 
-      <div className="flex-1 flex flex-col">
+      {/* Player Controls & Content */}
+      <div className="flex-1 p-6 max-w-2xl mx-auto w-full">
+        {/* Audio Controls */}
         <AudioControls
           isPlaying={isPlaying}
           currentTime={currentTime}
@@ -78,23 +90,34 @@ export function Player() {
           hasNext={hasNext}
         />
 
+        {/* Audio Player */}
         <AudioPlayer audioUrl={audioUrl} />
 
-        {/* Render content dynamically */}
-        <div className="p-4 space-y-4">
+        {/* Meditation Content */}
+        <div className="space-y-4 text-gray-600 leading-relaxed">
           {meditation.content.map((block, index) => {
             switch (block.type) {
               case 'text':
                 return <p key={index}>{block.content}</p>;
               case 'quote':
-                return <blockquote key={index}>{block.content}</blockquote>;
+                return (
+                  <blockquote
+                    key={index}
+                    className="border-l-4 border-primary pl-4 italic"
+                  >
+                    {block.content}
+                  </blockquote>
+                );
               default:
                 return null;
             }
           })}
         </div>
 
-        <CompleteButton onComplete={handleComplete} />
+        {/* Complete Button */}
+        <div className="mt-8">
+          <CompleteButton onComplete={handleComplete} />
+        </div>
       </div>
     </div>
   );
