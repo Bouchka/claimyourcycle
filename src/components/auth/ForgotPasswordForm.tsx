@@ -28,9 +28,9 @@ export function ForgotPasswordForm({ onBack }: Props) {
         </p>
         <button
           onClick={onBack}
-          className="text-primary hover:underline"
+          className="inline-flex items-center text-primary hover:underline transition-colors"
         >
-          Back to sign in
+          <span className="mr-2">&larr;</span> Back to sign in
         </button>
       </div>
     );
@@ -38,8 +38,10 @@ export function ForgotPasswordForm({ onBack }: Props) {
 
   return (
     <div>
-      <h2 className="text-2xl font-serif text-primary mb-4">Reset your password</h2>
-      <p className="text-gray-600 mb-6">
+      <h2 className="text-2xl font-serif text-primary mb-4 text-center">
+        Reset your password
+      </h2>
+      <p className="text-gray-600 mb-6 text-center">
         Enter your email address and we'll send you instructions to reset your password.
       </p>
 
