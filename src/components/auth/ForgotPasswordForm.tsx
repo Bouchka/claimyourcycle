@@ -73,10 +73,11 @@ export function ForgotPasswordForm({ onBack }: Props) {
           <button
             type="submit"
             disabled={loading}
-            className="flex-1 py-3 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+            className="gradient-button flex-1 disabled:opacity-50"
           >
             {loading ? 'Sending...' : 'Send Instructions'}
           </button>
+
         </div>
       </form>
     </div>

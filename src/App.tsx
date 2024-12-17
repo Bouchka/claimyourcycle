@@ -8,6 +8,7 @@ import { Layout } from './components/Layout';
 import { PrivateRoute } from './components/auth/PrivateRoute';
 import { AccountSettings } from './components/account/AccountSettings';
 import { PrivacyPolicy } from './components/account/PrivacyPolicy';
+import './styles/index.css';
 
 export function App() {
   return (

@@ -56,10 +56,11 @@ export function SignUpForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-6 w-full py-3 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+        className="gradient-button w-full mt-6 disabled:opacity-50"
       >
         {loading ? 'Creating Account...' : 'Sign Up'}
       </button>
+
     </form>
   );
 }

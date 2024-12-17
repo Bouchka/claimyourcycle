@@ -17,7 +17,10 @@ export default {
         serif: ['CMU Serif', 'serif'],
         sans: ['Mulish', 'sans-serif'],
       },
+      backgroundImage: {
+        'gradient-button': 'linear-gradient(135deg, #FACCCC, #E05E5F, #98D2CC, #0F2D32)',
+      },
     },
   },
   plugins: [],
-}
+};

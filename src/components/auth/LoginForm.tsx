@@ -76,10 +76,11 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+        className="gradient-button w-full disabled:opacity-50"
       >
         {loading ? 'Signing in...' : 'Sign In'}
       </button>
+
     </form>
   );
 }
