@@ -14,10 +14,10 @@ export function SignUpForm() {
     e.preventDefault();
     const success = await signUp(email, password);
     if (success) {
-      const from = (location.state as any)?.from?.pathname || '/';
+      const from = (location.state as any)?.from?.pathname || '/meditations'; // Redirect to list page
       navigate(from, { replace: true });
     }
-  };
+  };  
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">

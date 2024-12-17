@@ -45,7 +45,7 @@ export function Player() {
 
   const handleComplete = () => {
     markMeditationComplete(meditation.id);
-    navigate(`/chapter/${chapter.id}`);
+    navigate('/meditations');
   };
 
   return (
@@ -54,16 +54,18 @@ export function Player() {
       <MeditationHeader />
 
       {/* Image Section */}
-      <div className="w-full">
-        <img
-          src={imageUrl}
-          alt=""
-          className="w-full h-64 object-cover"
-          onError={(e) => {
-            console.error('Image failed to load:', imageUrl);
-            e.currentTarget.style.display = 'none';
-          }}
-        />
+      <div className="p-6 max-w-2xl mx-auto w-full">
+        <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}> {/* Add aspect ratio */}
+          <img
+            src={imageUrl}
+            alt=""
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+            onError={(e) => {
+              console.error('Image failed to load:', imageUrl);
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
       </div>
 
       {/* Chapter Name and Meditation Title */}
@@ -78,17 +80,20 @@ export function Player() {
 
       {/* Player Controls & Content */}
       <div className="flex-1 p-6 max-w-2xl mx-auto w-full">
+
         {/* Audio Controls */}
-        <AudioControls
-          isPlaying={isPlaying}
-          currentTime={currentTime}
-          duration={duration}
-          onPlayPause={togglePlay}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-          hasPrevious={hasPrevious}
-          hasNext={hasNext}
-        />
+        <div className="mb-6"> {/* Add margin-bottom */}
+          <AudioControls
+            isPlaying={isPlaying}
+            currentTime={currentTime}
+            duration={duration}
+            onPlayPause={togglePlay}
+            onPrevious={handlePrevious}
+            onNext={handleNext}
+            hasPrevious={hasPrevious}
+            hasNext={hasNext}
+          />
+        </div>
 
         {/* Audio Player */}
         <AudioPlayer audioUrl={audioUrl} />

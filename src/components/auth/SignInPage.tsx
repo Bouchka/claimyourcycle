@@ -10,7 +10,7 @@ export function SignInPage() {
   if (showForgotPassword) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="max-w-md w-full p-8 bg-white rounded-xl shadow-lg">
+        <div className="max-w-md w-full">
           <Logo />
           <ForgotPasswordForm onBack={() => setShowForgotPassword(false)} />
         </div>
@@ -20,7 +20,7 @@ export function SignInPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full p-8 bg-white rounded-xl shadow-lg">
+      <div className="max-w-md w-full p-6">
         <Logo />
         <LoginForm />
         <div className="text-center mt-6 space-y-2">
