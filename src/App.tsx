@@ -4,6 +4,7 @@ import { SignInPage } from './components/auth/SignInPage';
 import { SignUpPage } from './components/auth/SignUpPage';
 import { MeditationList } from './components/MeditationList';
 import { Player } from './components/Player';
+import { Layout } from './components/Layout';
 import { PrivateRoute } from './components/auth/PrivateRoute';
 import { AccountSettings } from './components/account/AccountSettings';
 import { PrivacyPolicy } from './components/account/PrivacyPolicy';
@@ -16,11 +17,15 @@ export function App() {
           <Route path="/" element={<Navigate to="/sign-in" replace />} />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/create-your-account" element={<SignUpPage />} />
+          
+          {/* Routes with Layout Wrapper */}
           <Route
             path="/meditations"
             element={
               <PrivateRoute>
-                <MeditationList />
+                <Layout>
+                  <MeditationList />
+                </Layout>
               </PrivateRoute>
             }
           />
@@ -28,7 +33,9 @@ export function App() {
             path="/meditation/:id"
             element={
               <PrivateRoute>
-                <Player />
+                <Layout>
+                  <Player />
+                </Layout>
               </PrivateRoute>
             }
           />
@@ -36,7 +43,9 @@ export function App() {
             path="/account"
             element={
               <PrivateRoute>
-                <AccountSettings />
+                <Layout>
+                  <AccountSettings />
+                </Layout>
               </PrivateRoute>
             }
           />
@@ -44,7 +53,9 @@ export function App() {
             path="/privacy-policy"
             element={
               <PrivateRoute>
-                <PrivacyPolicy />
+                <Layout>
+                  <PrivacyPolicy />
+                </Layout>
               </PrivateRoute>
             }
           />
