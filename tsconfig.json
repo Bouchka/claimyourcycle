@@ -21,8 +21,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client"] // Added to support Vite-specific types
+    "types": ["vite/client"]
   },
-  "include": ["src", "env.d.ts"], // Added env.d.ts to include environment types
+  "include": ["src", "env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
