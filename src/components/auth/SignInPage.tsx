@@ -29,7 +29,7 @@ export function SignInPage() {
               to="/create-your-account" 
               className="text-primary hover:underline"
             >
-              Don't have an account yet? Sign up
+              Don't have an account yet? Sign Up
             </Link>
           </div>
           <div>

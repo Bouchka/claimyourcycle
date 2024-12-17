@@ -30,7 +30,7 @@ export function ForgotPasswordForm({ onBack }: Props) {
           onClick={onBack}
           className="inline-flex items-center text-primary hover:underline transition-colors"
         >
-          <span className="mr-2">&larr;</span> Back to sign in
+          <span className="mr-2">&larr;</span> Back to Sign In
         </button>
       </div>
     );

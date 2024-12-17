@@ -13,7 +13,7 @@ export function SignUpPage() {
             to="/sign-in" 
             className="text-primary hover:underline"
           >
-            Already have an account? Sign in
+            Already have an account? Sign In
           </Link>
         </div>
       </div>
