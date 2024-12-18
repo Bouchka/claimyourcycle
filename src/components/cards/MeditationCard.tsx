@@ -25,7 +25,7 @@ export function MeditationCard({ meditation, isCompleted }: Props) {
   return (
     <Link to={`/meditation/${meditation.id}`} className="block">
       <div
-        className={`p-4 rounded-xl bg-white shadow-sm 
+        className={`p-4 rounded-xl bg-white shadow-sm transition-all duration-200 
                     ${isCompleted ? 'opacity-50' : ''}`}
       >
         <div className="flex items-center">
@@ -38,7 +38,14 @@ export function MeditationCard({ meditation, isCompleted }: Props) {
               key={`chakra-icon-${meditation.id}`}
             />
           </div>
-          <h3 className="text-lg font-serif text-primary">
+          <h3
+            className={`
+              text-lg font-serif text-primary transition-all duration-300
+              hover:text-transparent hover:bg-clip-text
+              hover:bg-gradient-to-b from-[#0F2D32] via-[#0F2D32] to-[#99D2CC]
+              hover:from-10% hover:via-30% hover:to-90%
+            `}
+          >
             {meditation.title}
           </h3>
         </div>

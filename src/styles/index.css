@@ -14,33 +14,7 @@ body {
   font-family: 'Mulish', sans-serif;
 }
 
-/* Button Styles */
-button {
-  @apply transition-all duration-200;
-}
-
-button:active {
-  @apply transform scale-95;
-}
-
-/* Meditation Card Styles */
-.meditation-card {
-  @apply p-4 rounded-xl bg-white shadow-sm transition-all duration-200;
-}
-
-.meditation-card:active {
-  @apply opacity-90;
-}
-
-.meditation-card.completed {
-  @apply opacity-50;
-}
-
-.meditation-title {
-  @apply text-4xl font-serif text-primary mb-8;
-}
-
-/* Gradient Button */
+/* Button Gradient */
 .gradient-button {
   @apply py-4 px-8 text-white text-center font-medium shadow-sm 
          transition-all duration-300 ease-in-out transform;
