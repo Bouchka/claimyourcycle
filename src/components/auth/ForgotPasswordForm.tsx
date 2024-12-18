@@ -21,10 +21,10 @@ export function ForgotPasswordForm({ onBack }: Props) {
 
   if (submitted) {
     return (
-      <div className="text-center">
+      <div className="text-center p-4">
         <h2 className="text-2xl font-serif text-primary mb-4">Check your email</h2>
         <p className="text-gray-600 mb-6">
-          We've sent password reset instructions to {email}
+          We've sent password reset instructions to {email}.
         </p>
         <button
           onClick={onBack}
@@ -37,7 +37,7 @@ export function ForgotPasswordForm({ onBack }: Props) {
   }
 
   return (
-    <div>
+    <div className="p-4 max-w-md mx-auto">
       <h2 className="text-2xl font-serif text-primary mb-4 text-center">
         Reset your password
       </h2>
@@ -47,7 +47,7 @@ export function ForgotPasswordForm({ onBack }: Props) {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <AuthError error={error} />
-        
+
         <div>
           <label htmlFor="reset-email" className="text-sm font-medium text-gray-700">
             Email
@@ -62,7 +62,7 @@ export function ForgotPasswordForm({ onBack }: Props) {
           />
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <button
             type="button"
             onClick={onBack}
@@ -77,7 +77,6 @@ export function ForgotPasswordForm({ onBack }: Props) {
           >
             {loading ? 'Sending...' : 'Send Instructions'}
           </button>
-
         </div>
       </form>
     </div>
