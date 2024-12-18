@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ReactNode;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'gradient'; // Add 'gradient'
 }
 
 export function IconButton({ 
@@ -19,6 +19,7 @@ export function IconButton({
         'flex items-center justify-center rounded-full transition-all duration-200',
         variant === 'primary' && 'bg-primary text-white hover:bg-primary/90',
         variant === 'secondary' && 'text-primary hover:bg-gray-100',
+        variant === 'gradient' && 'gradient-button', // Use the gradient class
         props.disabled && 'opacity-50 cursor-not-allowed',
         className
       )}

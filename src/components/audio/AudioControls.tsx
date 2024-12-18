@@ -24,28 +24,33 @@ export function AudioControls({
   return (
     <div className="space-y-8">
       <div className="flex justify-center items-center space-x-8">
-        <button 
+        {/* Previous Button with Gradient Text */}
+        <button
           onClick={onPrevious}
           disabled={!hasPrevious}
-          className="text-2xl text-primary disabled:opacity-50"
+          className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#E15E5F] to-[#99D2CC] disabled:opacity-50"
         >
           ⏮
         </button>
+
+        {/* Play/Pause Button with Gradient Circle */}
         <button
           onClick={onPlayPause}
-          className="w-16 h-16 text-2xl bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+          className="w-16 h-16 text-3xl gradient-button rounded-full flex items-center justify-center"
         >
           {isPlaying ? "⏸" : "▶"}
         </button>
-        <button 
+
+        {/* Next Button with Gradient Text */}
+        <button
           onClick={onNext}
           disabled={!hasNext}
-          className="text-2xl text-primary disabled:opacity-50"
+          className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#E15E5F] to-[#99D2CC] disabled:opacity-50"
         >
           ⏭
         </button>
       </div>
-      
+
       <div>
         <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
           <div
