@@ -1,3 +1,7 @@
+import { PlayIcon } from '../icons/PlayIcon';
+import { PauseIcon } from '../icons/PauseIcon';
+import { LeftDoubleArrow } from '../icons/LeftDoubleArrow';
+import { RightDoubleArrow } from '../icons/RightDoubleArrow';
 import { formatTime } from '../../utils/timeFormat';
 
 interface Props {
@@ -19,35 +23,35 @@ export function AudioControls({
   onPrevious,
   onNext,
   hasPrevious,
-  hasNext
+  hasNext,
 }: Props) {
   return (
     <div className="space-y-8">
       <div className="flex justify-center items-center space-x-8">
-        {/* Previous Button with Gradient Text */}
+        {/* Previous Button */}
         <button
           onClick={onPrevious}
           disabled={!hasPrevious}
-          className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#E15E5F] to-[#99D2CC] disabled:opacity-50"
+          className="gradient-icon-button w-16 h-16"
         >
-          ⏮
+          <LeftDoubleArrow className="w-8 h-8 text-white" />
         </button>
 
-        {/* Play/Pause Button with Gradient Circle */}
+        {/* Play/Pause Button */}
         <button
           onClick={onPlayPause}
-          className="w-16 h-16 text-3xl gradient-button rounded-full flex items-center justify-center"
+          className="circle-gradient-button"
         >
-          {isPlaying ? "⏸" : "▶"}
+          {isPlaying ? <PauseIcon className="w-8 h-8 text-white" /> : <PlayIcon className="w-8 h-8 text-white" />}
         </button>
 
-        {/* Next Button with Gradient Text */}
+        {/* Next Button */}
         <button
           onClick={onNext}
           disabled={!hasNext}
-          className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#E15E5F] to-[#99D2CC] disabled:opacity-50"
+          className="gradient-icon-button w-16 h-16"
         >
-          ⏭
+          <RightDoubleArrow className="w-8 h-8 text-white" />
         </button>
       </div>
 
