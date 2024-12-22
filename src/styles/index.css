@@ -32,37 +32,26 @@ body {
   @apply opacity-90 scale-95;
 }
 
-/* Gradient Circle for Play/Pause Button */
-.circle-gradient-button {
-  @apply flex items-center justify-center text-white font-medium shadow-sm 
-         transition-all duration-300 ease-in-out transform rounded-full;
-  background: linear-gradient(135deg, #E15E5F, #99D2CC, #0F2D32, #FACCCC);
-  background-size: 200% 200%;
-  width: 5rem; /* Larger size for Play/Pause button */
-  height: 5rem;
+/* Chapter Card */
+.chapter-card {
+  @apply p-4 rounded-xl transition-all duration-300 ease-in-out;
+  margin-bottom: 0.5rem; /* Adjusted spacing between cards */
 }
 
-.circle-gradient-button:hover {
-  background-position: 100% 0;
+.chapter-card:last-child {
+  margin-bottom: 0; /* Removes bottom margin for the last card */
 }
 
-.circle-gradient-button:active {
-  @apply opacity-90;
+.chapter-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Gradient Styling for << and >> Buttons */
-.gradient-icon-button {
-  @apply flex items-center justify-center transition-all duration-300 ease-in-out;
-  width: 4rem;
-  height: 4rem;
+.chapter-card h2 {
+  @apply text-xl font-sans text-primary;
 }
 
-/* Hover Effect for SVG Gradient */
-.gradient-icon-button:hover svg stop {
-  stop-color: #0F2D32; /* Change gradient colors on hover */
-  transition: stop-color 0.3s ease-in-out;
-}
-
-.gradient-icon-button:hover svg stop:first-child {
-  stop-color: #FACCCC;
+/* Arrow Styling */
+.chapter-card span {
+  @apply flex items-center justify-center w-6 h-6 text-primary;
 }

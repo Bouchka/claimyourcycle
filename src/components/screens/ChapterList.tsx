@@ -17,19 +17,36 @@ export function ChapterList() {
       <div className="space-y-4">
         {chapters.map((chapter) => {
           const completedCount = chapter.meditations.filter(
-            m => completedMeditations.includes(m.id)
+            (m) => completedMeditations.includes(m.id)
           ).length;
+
+          // Define dynamic Tailwind classes
+          const chapterColors: Record<string, string> = {
+            warrior: 'bg-warrior',
+            mother: 'bg-mother',
+            magician: 'bg-magician',
+            oracle: 'bg-oracle',
+          };
+
+          // Fallback to a default color if chapter.id is not mapped
+          const chapterColorClass = chapterColors[chapter.id] || 'bg-gray-100';
 
           return (
             <Link key={chapter.id} to={`/chapter/${chapter.id}`}>
               <div
-                className="chapter-card"
-                style={{ backgroundColor: chapter.color }}
+                className={`p-4 rounded-xl transition-all duration-300 ease-in-out ${chapterColorClass}`}
               >
                 <div className="flex items-center mb-3">
-                  <span className="text-2xl mr-3">{chapter.icon}</span>
-                  <h2 className="text-xl font-medium text-primary">
-                    {chapter.title}
+                  <div className="w-8 h-8 mr-3">
+                    <img
+                      src={`/icons/chapters/${chapter.id}.png`}
+                      alt={`${chapter.title.toUpperCase()} Icon`}
+                      className="w-full h-full object-contain"
+                      loading="eager"
+                    />
+                  </div>
+                  <h2 className="text-xl font-sans text-primary transition-all duration-300">
+                    {chapter.title.toUpperCase()}
                   </h2>
                 </div>
                 <div className="flex items-center">
@@ -37,7 +54,7 @@ export function ChapterList() {
                     <div
                       className="h-full bg-primary transition-all duration-300"
                       style={{
-                        width: `${(completedCount / chapter.meditations.length) * 100}%`
+                        width: `${(completedCount / chapter.meditations.length) * 100}%`,
                       }}
                     />
                   </div>
