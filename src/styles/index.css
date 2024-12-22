@@ -44,34 +44,25 @@ body {
 
 .circle-gradient-button:hover {
   background-position: 100% 0;
-  transform: scale(1.1); /* Slight scaling on hover */
 }
 
 .circle-gradient-button:active {
-  @apply opacity-90 scale-95;
+  @apply opacity-90;
 }
 
 /* Gradient Styling for << and >> Buttons */
 .gradient-icon-button {
-  @apply flex items-center justify-center text-transparent bg-clip-text 
-         bg-gradient-to-r from-[#E15E5F] to-[#99D2CC] font-medium shadow-sm 
-         transition-all duration-300 ease-in-out;
+  @apply flex items-center justify-center transition-all duration-300 ease-in-out;
+  width: 4rem;
+  height: 4rem;
 }
 
-.gradient-icon-button svg {
-  @apply w-8 h-8 text-white; /* Ensures SVG inherits proper size and color */
+/* Hover Effect for SVG Gradient */
+.gradient-icon-button:hover svg stop {
+  stop-color: #0F2D32; /* Change gradient colors on hover */
+  transition: stop-color 0.3s ease-in-out;
 }
 
-.gradient-icon-button:hover {
-  background-position: 100% 0;
-  text-opacity: 1; /* Makes the gradient more prominent on hover */
-}
-
-.gradient-icon-button:active {
-  @apply opacity-90;
-}
-
-/* Ensures responsiveness for icons */
-.icon-button {
-  @apply w-12 h-12 flex items-center justify-center;
+.gradient-icon-button:hover svg stop:first-child {
+  stop-color: #FACCCC;
 }
