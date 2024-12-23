@@ -32,26 +32,30 @@ export function AudioControls({
         <button
           onClick={onPrevious}
           disabled={!hasPrevious}
-          className="gradient-icon-button w-16 h-16"
+          className="gradient-icon-button w-12 h-12 sm:w-16 sm:h-16"
         >
-          <LeftDoubleArrow className="w-8 h-8" />
+          <LeftDoubleArrow className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
 
         {/* Play/Pause Button */}
         <button
           onClick={onPlayPause}
-          className="circle-gradient-button"
+          className="circle-gradient-button w-12 h-12 sm:w-20 sm:h-20"
         >
-          {isPlaying ? <PauseIcon className="w-8 h-8" /> : <PlayIcon className="w-8 h-8" />}
+          {isPlaying ? (
+            <PauseIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+          ) : (
+            <PlayIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+          )}
         </button>
 
         {/* Next Button */}
         <button
           onClick={onNext}
           disabled={!hasNext}
-          className="gradient-icon-button w-16 h-16"
+          className="gradient-icon-button w-12 h-12 sm:w-16 sm:h-16"
         >
-          <RightDoubleArrow className="w-8 h-8" />
+          <RightDoubleArrow className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
       </div>
 
@@ -70,3 +74,4 @@ export function AudioControls({
     </div>
   );
 }
+
