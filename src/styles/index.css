@@ -6,6 +6,7 @@ body {
   @apply bg-white text-primary font-sans;
 }
 
+/* Font Families */
 .font-serif {
   font-family: 'CMU Serif', serif;
 }
@@ -38,7 +39,7 @@ body {
          transition-all duration-300 ease-in-out transform rounded-full;
   background: linear-gradient(135deg, #E15E5F, #99D2CC, #0F2D32, #FACCCC);
   background-size: 200% 200%;
-  width: 5rem; /* Consistent size across devices */
+  width: 5rem;
   height: 5rem;
 }
 
@@ -57,9 +58,8 @@ body {
   height: 4rem;
 }
 
-/* Hover Effect for SVG Gradient */
 .gradient-icon-button:hover svg stop {
-  stop-color: #0F2D32; /* Change gradient colors on hover */
+  stop-color: #0F2D32;
   transition: stop-color 0.3s ease-in-out;
 }
 
@@ -69,17 +69,23 @@ body {
 
 /* Chapter Card */
 .chapter-card {
-  @apply p-4 rounded-xl transition-all duration-300 ease-in-out;
+  @apply p-3 rounded-lg transition-all duration-300 ease-in-out;
+  margin-bottom: 0 !important; /* Override any unintended margins */
 }
 
 .chapter-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure no extra margin on parent or sibling elements */
+button, div {
+  margin: 0;
 }
 
 /* Chapter Title */
 .chapter-card h2 {
-  @apply text-xl font-sans text-primary; /* Static dark green text */
+  @apply text-lg font-sans text-primary;
   transition: none; /* Removes hover effect */
 }
 
@@ -87,4 +93,31 @@ body {
 .chapter-card span svg path {
   fill: #1B4B43; /* Default dark green */
   transition: none; /* Removes hover effect */
+}
+
+/* Spacing Between Chapter Cards */
+.flex-col {
+  gap: 0.5rem; /* Tight spacing between chapter cards */
+}
+
+/* Page Background */
+.page {
+  background-color: #F8F8F8;
+}
+
+/* Meditation Card */
+.meditation-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  elevation: 2;
+}
+
+/* Player Controls */
+.player-controls {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }

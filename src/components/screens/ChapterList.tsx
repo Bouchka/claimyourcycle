@@ -14,13 +14,12 @@ export function ChapterList() {
         </h1>
       </div>
 
-      <div className="space-y-4">
+      <div className="flex flex-col gap-2"> {/* Controlled spacing */}
         {chapters.map((chapter) => {
           const completedCount = chapter.meditations.filter(
             (m) => completedMeditations.includes(m.id)
           ).length;
 
-          // Define dynamic Tailwind classes
           const chapterColors: Record<string, string> = {
             warrior: 'bg-warrior',
             mother: 'bg-mother',
@@ -28,15 +27,14 @@ export function ChapterList() {
             oracle: 'bg-oracle',
           };
 
-          // Fallback to a default color if chapter.id is not mapped
           const chapterColorClass = chapterColors[chapter.id] || 'bg-gray-100';
 
           return (
             <Link key={chapter.id} to={`/chapter/${chapter.id}`}>
               <div
-                className={`p-4 rounded-xl transition-all duration-300 ease-in-out ${chapterColorClass}`}
+                className={`p-3 rounded-lg transition-all duration-300 ease-in-out ${chapterColorClass}`}
               >
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-2">
                   <div className="w-8 h-8 mr-3">
                     <img
                       src={`/icons/chapters/${chapter.id}.png`}
@@ -45,7 +43,7 @@ export function ChapterList() {
                       loading="eager"
                     />
                   </div>
-                  <h2 className="text-xl font-sans text-primary transition-all duration-300">
+                  <h2 className="text-lg font-sans text-primary transition-all duration-300">
                     {chapter.title.toUpperCase()}
                   </h2>
                 </div>

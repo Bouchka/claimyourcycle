@@ -7,7 +7,7 @@ interface Props {
 
 export function ChapterList({ chapters }: Props) {
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-2"> {/* Controlled spacing */}
       {chapters.map((chapter) => (
         <ChapterCard
           key={chapter.id}

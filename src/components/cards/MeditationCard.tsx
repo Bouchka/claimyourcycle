@@ -38,14 +38,7 @@ export function MeditationCard({ meditation, isCompleted }: Props) {
               key={`chakra-icon-${meditation.id}`}
             />
           </div>
-          <h3
-            className={`
-              text-lg font-serif text-primary transition-all duration-300
-              hover:text-transparent hover:bg-clip-text
-              hover:bg-gradient-to-b from-[#0F2D32] via-[#0F2D32] to-[#99D2CC]
-              hover:from-10% hover:via-30% hover:to-90%
-            `}
-          >
+          <h3 className="text-lg font-serif text-primary transition-all duration-300">
             {meditation.title}
           </h3>
         </div>
