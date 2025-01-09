@@ -5,7 +5,7 @@ export function BackButton() {
 
   return (
     <button 
-      onClick={() => navigate(-1)}
+      onClick={() => navigate('/meditations')}
       className="text-primary hover:opacity-80"
     >
       ← Back
