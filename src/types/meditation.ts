@@ -1,7 +1,7 @@
 export interface ContentBlock {
   type: 'text' | 'quote' | 'heading' | 'list';
-  content: string;
-  items?: string[]; // Add this to handle list items
+  content?: string; // Optional to support list blocks
+  items?: string[]; // Used for list blocks
 }
 
 export interface Meditation {
@@ -11,7 +11,7 @@ export interface Meditation {
   icon: string;
   audioUrl: string;
   image: string;
-  content: ContentBlock[]; // Align this
+  content: ContentBlock[]; // List of content blocks
   duration: string;
 }
 

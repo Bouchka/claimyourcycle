@@ -15,17 +15,43 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/warrior/ground-in-lightness.mp3',
         image: '/images/meditation-1.jpg',
         content: [
-          {
-            type: 'text',
-            content:
-              'Begin your journey by connecting with your inner warrior through grounding practices that bring lightness to your being.',
+          { type: 'text', content: 'Welcome to Day 1 of the 28-day program to embrace your feminine cycle.' },
+          { type: 'text', content: 'Congratulations on taking a step toward thriving by connecting with your true feminine nature.' },
+          { type: 'text', content: 'By doing so, you are joining us in elevating womanhood, especially in times when our fundamental rights are still being challenged.' },
+          { type: 'text', content: 'Throughout this 28-day journey, you will uncover the various layers of femininity—its lights and shadows—without any taboos.' },
+          { type: 'text', content: 'Each daily topic aligns with how our feelings tend to fluctuate throughout our monthly cycles.' },
+          { type: 'text', content: 'By understanding your cycle, you will be able to live a more fulfilling and creative life, using your femininity as a strength.' },
+          { type: 'text', content: 'I hope to mindfully share the sacred knowledge about our feminine minds and hearts that I have gathered through my life’s experiences.' },
+          { type: 'text', content: 'I hope this knowledge will be as transformative for you as it has been for me.' },
+          { type: 'text', content: 'Please start the first day of the program right after your period has ended.' },
+          { type: 'text', content: 'If you’re not menstruating, you can begin at the start of the waxing moon, right after the new moon.' },
+          { type: 'text', content: 'If you are on a different day of your cycle, start with the corresponding day of the program, counting from Day 1—the day after your period has ended.' },
+          { type: 'heading', content: 'Today, you are in the follicular phase of your cycle.' },
+          { type: 'text', content: 'Just like a crescent moon, your estrogen levels will progressively rise each day until ovulation.' },
+          { type: 'text', content: 'This phase of your cycle is a time of renewal for your body, much like spring.' },
+          { type: 'text', content: 'This is when you feel the lightest, most focused, and energetic.' },
+          { type: 'text', content: 'As you enter this phase, you are building more energy, strength, and stamina.' },
+          { type: 'quote', content: 'From a young age, we are taught that high-achieving, disciplined, and career-driven women must sacrifice their femininity.' },
+          { type: 'text', content: 'We learn that to be respected, we have to overdo it. Women often perform better in school and are taught to overachieve. In a never-ending quest for perfection, we often feel like we are never enough.' },
+          { type: 'text', content: 'But we also recognize that the potential of the young warrior within us is infinite.' },
+          { type: 'text', content: 'This week, we will tap into that potential, turning it into focused energy, and learn how to balance its positive aspects while acknowledging and working with its shadows.' },
+          { type: 'text', content: 'This first phase is crucial for capturing our true calling. We are lightest, open to learning from anyone, and living life to the fullest to enrich our experiences.' },
+          { type: 'text', content: 'However, an overly active energy can disconnect you from your heart and feelings, making it difficult to show vulnerability. You may also feel overworked, overly anxious, or on the edge of burnout.' },
+          { type: 'text', content: 'Forget about everything that might worry you right now, and enjoy every second that follows. This first session will help you settle and ground into this new phase, and into your own season of growth and renewal.' },
+          { 
+            type: 'heading', 
+            content: "Today's Focus:" 
           },
-          {
-            type: 'quote',
-            content:
-              "A warrior's strength comes not from chaos, but from finding peace within.",
-          },
-        ],
+          { 
+            type: 'list', 
+            items: [
+              'How would you define your life goal?',
+              'What is your intention for this month?',
+              'What is your intention for today?'
+            ] 
+          }
+        ]
+        ,
         duration: '10:00',
       },
       {
