@@ -266,7 +266,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/sacred-feminine.mp3',
         image: '/images/meditation-9.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 9 of the 28 days program to align with your inner cycle.' },
+          { type: 'text', content: 'Welcome to Day 9 of the 28 days program to align with your inner cycle.' },
           { type: 'text', content: 'Our uterus is one of the most misunderstood organs in the human body.' },
           { type: 'text', content: 'We ourselves do not comprehend how this organ can be so powerful and magical.' },
           { type: 'text', content: 'Unlike popular belief, the womb’s sole purpose is not to give birth. Its energetic presence is much more powerful than that.' },
@@ -295,7 +295,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/emotional-wisdom.mp3',
         image: '/images/meditation-10.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 10 of the 28 days program to align with your cycle.' },
+          { type: 'text', content: 'Welcome to Day 10 of the 28 days program to align with your cycle.' },
           { type: 'text', content: 'This time of your cycle would be the closest to the peak of your ovulatory period, during which your ovulation would happen. If you are in touch with your body, you would notice clear physical signs that you have released an egg.' },
           { type: 'text', content: 'Natural ovulation is the time at which we are most likely to be fertile and conceive. At the same time, our entire body manifests fertility in many ways.' },
           { type: 'text', content: 'The hormones circulating make your skin glow, your body warmer, and release pheromones that make you attractive to everyone around you.' },
@@ -318,7 +318,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/compassionate-heart.mp3',
         image: '/images/meditation-11.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 11 of the 28 days program to live in harmony with your inner cycle.' },
+          { type: 'text', content: 'Welcome to Day 11 of the 28 days program to live in harmony with your inner cycle.' },
           { type: 'text', content: 'Today we are going to start exploring the important topic of unconditional love.' },
           { type: 'text', content: 'What is unconditional love?' },
           { type: 'quote', content: 'Loving is to take someone else’s interests as your own. The more we love someone, the more we feel protective of them. The more we want what’s best for them.' },
@@ -345,7 +345,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/intuitive-guidance.mp3',
         image: '/images/meditation-12.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 15 of the 28 days program to align with your cycle.' },
+          { type: 'text', content: 'Welcome to Day 12 of the 28 days program to align with your cycle.' },
           { type: 'text', content: 'I am eternally admirative of nature’s laws.' },
           { type: 'text', content: 'Life is truly a test—a beautifully crafted game with untold rules. It’s often only after experiencing a big slap in the face that the rule becomes obvious, yet still so hard to follow sometimes.' },
           { type: 'quote', content: 'One of the most ironic and misunderstood laws is the importance of setting boundaries.' },
@@ -379,7 +379,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/healing-touch.mp3',
         image: '/images/meditation-13.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 13 of the 28 days plan to align with your inner cycle.' },
+          { type: 'text', content: 'Welcome to Day 13 of the 28 days plan to align with your inner cycle.' },
           { type: 'text', content: 'How many women around you do you know of who have lived similar experiences to you?' },
           { type: 'text', content: 'Whether these are good or bad experiences, our very nature as women will make sure we share similar stories along our lives.' },
           { type: 'quote', content: 'Today’s Focus' },
@@ -400,7 +400,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/mother/divine-mother.mp3',
         image: '/images/meditation-14.jpg',
         content: [
-          { type: 'text', content: 'Welcome to day 14 of the 28 days program to align with your inner cycle.' },
+          { type: 'text', content: 'Welcome to Day 14 of the 28 days program to align with your inner cycle.' },
           { type: 'text', content: 'We are slowly approaching the end of the second phase of your cycle—the Mother—and getting closer to the third phase—the one of the Magician.' },
           { type: 'text', content: 'During the mother phase, you feel warm, kind, and supportive to others around you. You feel of service, social, and like a magnet people want to be around.' },
           { type: 'text', content: 'An imbalanced mother energy can translate into taking care of others so much that you lose your own sense of self.' },
@@ -824,7 +824,7 @@ export const chapters: Chapter[] = [
         audioUrl: '/audio/oracle/letting-go.mp3',
         image: '/images/meditation-28.jpg',
         content: [
-          { type: 'text', content: 'Welcome to the last day of the 28 days program to live in alignment with your feminine cycle.' },
+          { type: 'text', content: 'Welcome to the final Day of the 28 days program to live in alignment with your feminine cycle.' },
           { type: 'text', content: 'Congratulations on making it to the end!' },
           { type: 'text', content: 'Your dedication to take some time daily for yourself is a huge step towards optimal health.' },
           { type: 'quote', content: 'Being a woman in this society is tough. Luckily we have been blessed with an unspeakable power, and the power to heal ourselves through our mind, spirit, and faith.' },
