@@ -13,6 +13,7 @@ interface Props {
   onNext: () => void;
   hasPrevious: boolean;
   hasNext: boolean;
+  onSeek: (time: number) => void;
 }
 
 export function AudioControls({
@@ -24,11 +25,15 @@ export function AudioControls({
   onNext,
   hasPrevious,
   hasNext,
+  onSeek,
 }: Props) {
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onSeek(Number(e.target.value));
+  };
+
   return (
     <div className="space-y-8">
       <div className="flex justify-center items-center space-x-8">
-        {/* Previous Button */}
         <button
           onClick={onPrevious}
           disabled={!hasPrevious}
@@ -37,7 +42,6 @@ export function AudioControls({
           <LeftDoubleArrow className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
 
-        {/* Play/Pause Button */}
         <button
           onClick={onPlayPause}
           className="circle-gradient-button w-12 h-12 sm:w-20 sm:h-20"
@@ -49,7 +53,6 @@ export function AudioControls({
           )}
         </button>
 
-        {/* Next Button */}
         <button
           onClick={onNext}
           disabled={!hasNext}
@@ -59,14 +62,22 @@ export function AudioControls({
         </button>
       </div>
 
-      <div>
-        <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+      <div className="progress-bar-container">
+        <div className="progress-bar">
           <div
-            className="h-full bg-primary transition-all duration-200"
+            className="played"
             style={{ width: `${(currentTime / duration) * 100}%` }}
+          ></div>
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            value={currentTime}
+            onChange={handleSliderChange}
+            className="slider"
           />
         </div>
-        <div className="flex justify-between text-sm text-gray-500 mt-2">
+        <div className="progress-bar-time">
           <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
@@ -74,4 +85,3 @@ export function AudioControls({
     </div>
   );
 }
-

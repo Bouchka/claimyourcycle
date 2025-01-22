@@ -1,17 +1,21 @@
+import { useRef } from 'react';
+import ReactPlayer from 'react-player';
 import { useParams, useNavigate } from 'react-router-dom';
 import { chapters } from '../data/chapters';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { useProgressStore } from '../store/useProgressStore';
 import { AudioPlayer } from './audio/AudioPlayer';
 import { AudioControls } from './audio/AudioControls';
-import { getMediaUrl } from '../utils/cloudinary';
 import { useAudioNavigation } from '../hooks/useAudioNavigation';
 import { MeditationHeader } from './meditation/MeditationHeader';
 import { CompleteButton } from './meditation/CompleteButton';
+import { getMediaUrl } from '../utils/cloudinary';
+
 
 export function Player() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const playerRef = useRef<ReactPlayer>(null); // Ref for ReactPlayer
 
   const meditation = chapters
     .flatMap((c) => c.meditations)
@@ -43,6 +47,13 @@ export function Player() {
     }
   };
 
+  const handleSeek = (time: number) => {
+    // Update playback position using the ReactPlayer instance
+    if (playerRef.current) {
+      playerRef.current.seekTo(time, 'seconds');
+    }
+  };
+
   const handleComplete = () => {
     markMeditationComplete(meditation.id);
     navigate('/meditations');
@@ -55,7 +66,7 @@ export function Player() {
 
       {/* Image Section */}
       <div className="p-6 max-w-2xl mx-auto w-full">
-        <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}> {/* Add aspect ratio */}
+        <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
           <img
             src={imageUrl}
             alt=""
@@ -80,23 +91,21 @@ export function Player() {
 
       {/* Player Controls & Content */}
       <div className="flex-1 p-6 max-w-2xl mx-auto w-full">
-
         {/* Audio Controls */}
-        <div className="mb-6"> {/* Add margin-bottom */}
-          <AudioControls
-            isPlaying={isPlaying}
-            currentTime={currentTime}
-            duration={duration}
-            onPlayPause={togglePlay}
-            onPrevious={handlePrevious}
-            onNext={handleNext}
-            hasPrevious={hasPrevious}
-            hasNext={hasNext}
-          />
-        </div>
+        <AudioControls
+          isPlaying={isPlaying}
+          currentTime={currentTime}
+          duration={duration}
+          onPlayPause={togglePlay}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          hasPrevious={hasPrevious}
+          hasNext={hasNext}
+          onSeek={handleSeek}
+        />
 
         {/* Audio Player */}
-        <AudioPlayer audioUrl={audioUrl} />
+        <AudioPlayer audioUrl={audioUrl} ref={playerRef} />
 
         {/* Meditation Content */}
         <div className="space-y-4 text-gray-600 leading-relaxed">

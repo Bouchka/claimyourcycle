@@ -1,36 +1,33 @@
-import { useRef, useEffect } from 'react';
+import { forwardRef } from 'react';
+import ReactPlayer from 'react-player';
 import { usePlayerStore } from '../../store/usePlayerStore';
 
 interface Props {
   audioUrl: string;
 }
 
-export function AudioPlayer({ audioUrl }: Props) {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const { 
-    isPlaying, 
-    setCurrentTime, 
-    setDuration 
-  } = usePlayerStore();
+export const AudioPlayer = forwardRef<ReactPlayer, Props>(({ audioUrl }, ref) => {
+  const { isPlaying, setCurrentTime, setDuration } = usePlayerStore();
 
-  useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.play();
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  }, [isPlaying]);
+  const handleProgress = (progress: { playedSeconds: number }) => {
+    setCurrentTime(progress.playedSeconds);
+  };
+
+  const handleDuration = (duration: number) => {
+    setDuration(duration);
+  };
 
   return (
-    <audio 
-      ref={audioRef}
-      src={audioUrl}
+    <ReactPlayer
+      ref={ref}
+      url={audioUrl}
+      playing={isPlaying}
       controls={false}
-      className="hidden"
-      onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
-      onDurationChange={(e) => setDuration(e.currentTarget.duration)}
+      onProgress={handleProgress}
+      onDuration={handleDuration}
+      onError={(e) => console.error('Error playing audio:', e)}
+      width="0"
+      height="0"
     />
   );
-}
+});
