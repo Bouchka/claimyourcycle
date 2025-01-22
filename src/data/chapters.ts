@@ -5,7 +5,7 @@ export const chapters: Chapter[] = [
     id: 'warrior',
     title: 'THE WARRIOR',
     icon: '✧',
-    color: '#E6F3F0',
+    color: '#99D2CC4D',
     meditations: [
       {
         id: 'ground-in-lightness',
@@ -218,7 +218,7 @@ export const chapters: Chapter[] = [
     id: 'mother',
     title: 'THE MOTHER',
     icon: '♥',
-    color: '#FFE6E6',
+    color: '#FACCCC4D',
     meditations: [
       {
         id: 'mother-wound',
@@ -422,7 +422,7 @@ export const chapters: Chapter[] = [
     id: 'magician',
     title: 'THE MAGICIAN',
     icon: '✦',
-    color: '#F3E6F0',
+    color: '#E15E5F4D',
     meditations: [
       {
         id: 'tree-hugger',
@@ -612,7 +612,7 @@ export const chapters: Chapter[] = [
     id: 'oracle',
     title: 'THE ORACLE',
     icon: '⚯',
-    color: '#E6E6F0',
+    color: '#0F2D324D',
     meditations: [
       {
         id: 'the-red-tent',
